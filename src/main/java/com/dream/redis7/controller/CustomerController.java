@@ -49,4 +49,10 @@ public class CustomerController {
     public Customer findCustomerById(@PathVariable int id) {
         return customerService.findCustomerById(id);
     }
+
+    @ApiOperation("BloomFilter,按照customerid查询")
+    @RequestMapping(value = "/customerbloomfilter/{id}",method = RequestMethod.GET)
+    public Customer findCustomerByIdWithBloomFilter(@PathVariable int id) {
+        return customerService.findCustomerByIdWithBloomFilter(id);
+    }
 }
